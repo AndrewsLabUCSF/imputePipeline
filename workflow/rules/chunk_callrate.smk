@@ -39,7 +39,8 @@ rule sort_vcf_allchr:
     threads: 4
     resources:
         mem_mb = 8192,
-        time_min = 120
+        time_min = 120,
+        disk_mb=8000
     conda: '../envs/bcftools.yaml'
     shell:
         '''

@@ -243,8 +243,12 @@ postImpute_config = {
 
 
 # Post Imputation
+local_src = '/wynton/group/andrews/bin'
+sfile_postImpute = local_src + '/postImpute/workflow/Snakefile'
+
 module postImpute:
-    snakefile: github("marcoralab/postImpute", path="workflow/Snakefile", tag="v0.4.10")
+    # snakefile: github("marcoralab/postImpute", path="workflow/Snakefile", tag="v0.4.10")
+    snakefile: sfile_postImpute
     config: postImpute_config
 
 use rule * from postImpute as postImpute_*
